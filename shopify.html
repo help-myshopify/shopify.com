@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Help Center</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --text: #111;
+  --subtext: #6b7280;
+  --border: #e5e7eb;
+  --bg: #ffffff;
+  --primary: #008060;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* HEADER */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 60px;
+  border-bottom: 1px solid var(--border);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.logo-icon {
+  display: flex;
+  align-items: center;
+}
+
+.logo-box {
+  width: 26px;
+  height: 26px;
+  background: #000;
+  border-radius: 6px;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+button {
+  padding: 10px 18px;
+  border-radius: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-outline {
+  border: 1px solid var(--border);
+  background: transparent;
+}
+
+.btn-outline:hover {
+  background: #f9fafb;
+}
+
+.btn-dark {
+  background: #111;
+  color: #fff;
+  border: none;
+}
+
+.btn-dark:hover {
+  background: #000;
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 80px 20px 40px;
+}
+
+.hero h1 {
+  font-size: 48px;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+.search-wrapper {
+  max-width: 620px;
+  margin: auto;
+  position: relative;
+}
+
+.search-wrapper input {
+  width: 100%;
+  padding: 16px 20px 16px 50px;
+  border-radius: 40px;
+  border: 1px solid var(--border);
+  font-size: 15px;
+  outline: none;
+  transition: border 0.2s;
+}
+
+.search-wrapper input:focus {
+  border-color: #999;
+}
+
+.search-icon {
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #9ca3af;
+  font-size: 14px;
+}
+
+/* BANNER */
+.banner {
+  margin: 50px auto;
+  max-width: 1100px;
+  padding: 50px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.banner h2 {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.banner p {
+  color: var(--subtext);
+  margin-bottom: 15px;
+}
+
+.banner button {
+  background: #111;
+  color: white;
+  border: none;
+}
+
+/* CONTENT */
+.container {
+  max-width: 760px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.container h1 {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.container h2 {
+  margin-top: 35px;
+  margin-bottom: 12px;
+  font-size: 20px;
+}
+
+.container p {
+  color: #374151;
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+
+.container ul {
+  margin-left: 20px;
+  margin-bottom: 18px;
+}
+
+.container li {
+  margin-bottom: 6px;
+}
+
+/* BUTTON */
+.contact-btn {
+  display: inline-block;
+  margin-top: 10px;
+  background: var(--primary);
+  color: white;
+  padding: 12px 22px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.contact-btn:hover {
+  background: #006e52;
+}
+
+/* CHAT */
+.chat-btn {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: #111;
+  color: #fff;
+  padding: 14px 22px;
+  border-radius: 30px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  text-decoration: none; /* ADD THIS */
+}
+
+/* FOOTER */
+footer {
+  background: #0a0a0a;
+  color: #fff;
+  padding: 60px;
+  margin-top: 80px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+}
+
+.footer-grid h4 {
+  margin-bottom: 14px;
+  font-size: 14px;
+}
+
+.footer-grid a {
+  display: block;
+  color: #9ca3af;
+  text-decoration: none;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.footer-grid a:hover {
+  color: #fff;
+}
+
+.footer-bottom {
+  border-top: 1px solid #222;
+  margin-top: 40px;
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  font-size: 14px;
+  color: #9ca3af;
+}
+
+.socials span {
+  margin-left: 14px;
+  cursor: pointer;
+}
+
+.socials {
+  display: flex;
+  align-items: center;
+}
+
+.socials svg {
+  margin-left: 14px;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+}
+
+.socials svg:hover {
+  opacity: 1;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">
+    <div class="logo-icon">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="black">
+    <path d="M5 4h14l-1.5 14H6.5L5 4z"></path>
+    <path d="M9 9c1-1 5-1 6 0" stroke="white" stroke-width="1.5" fill="none"/>
+  </svg>
+</div>
+    <span>Help</span>
+  </div>
+
+  <div class="nav-buttons">
+    <button class="btn-outline">Start for free</button>
+    <button class="btn-dark">Log in</button>
+  </div>
+</header>
+
+<section class="hero">
+  <h1>How can we help?</h1>
+
+  <div class="search-wrapper">
+    <span class="search-icon">🔍</span>
+    <input type="text" placeholder="Ask anything">
+  </div>
+</section>
+
+<section class="banner">
+  <div>
+    <h2>Shopify Editions Winter ’26</h2>
+    <p>Discover the latest improvements and features.</p>
+    <button>Explore 150+ updates</button>
+  </div>
+</section>
+
+<div class="container">
+
+  <h1>Security Notice: Harmful Scripts Detected on Your Store</h1>
+
+  <p>We have identified scripts currently running on your store that may pose a security or compliance risk.</p>
+
+  <p>This page explains what this means, why it matters, and the next steps required to protect your store.</p>
+
+  <h2>What Are Custom Code Scripts?</h2>
+
+  <p>Custom code scripts are pieces of code (commonly JavaScript) that run on your storefront to enable additional functionality.</p>
+
+  <p>These scripts may originate from:</p>
+
+  <ul>
+    <li>Third-party applications</li>
+    <li>Tracking and analytics tools</li>
+    <li>Theme customizations</li>
+    <li>External integrations</li>
+  </ul>
+
+  <p>Scripts operate within your store environment and can interact with customer activity, storefront behavior, and transaction processes.</p>
+
+  <h2>Why This Notification Was Sent</h2>
+
+  <p>Our systems detected script behavior that may:</p>
+
+  <ul>
+    <li>Inject malicious code</li>
+    <li>Steal customer data</li>
+    <li>Redirect users without their knowledge or consent</li>
+  </ul>
+
+  <p>In some cases, these risks may occur unintentionally due to misconfiguration, outdated integrations, or conflicts between multiple scripts.</p>
+
+  <h2>Potential Impact</h2>
+
+  <p>If these issues are not addressed, your store may experience:</p>
+
+  <h3>Mild Impact</h3>
+  <ul>
+    <li>Slow store performance</li>
+    <li>Lower sales</li>
+    <li>Broken user experience (UX)</li>
+  </ul>
+
+  <h3>Moderate Impact</h3>
+  <ul>
+    <li>Checkout issues</li>
+    <li>Payment failures</li>
+    <li>App conflicts</li>
+  </ul>
+
+  <h3>Severe Impact</h3>
+  <ul>
+    <li>Account review</li>
+    <li>Payment holds (including via Shopify Payments)</li>
+    <li>Store suspension or termination</li>
+  </ul>
+
+  <h2>Important Considerations</h2>
+
+  <p>Scripts can affect critical parts of your store, including:</p>
+
+  <ul>
+    <li>Customer sessions</li>
+    <li>Cart and checkout behavior</li>
+    <li>Payment processing</li>
+    <li>Data handling</li>
+  </ul>
+
+  <p>Because of this, identifying and resolving script-related risks requires careful handling. Incorrect changes may unintentionally disrupt store functionality or introduce additional issues.</p>
+
+  <h2>Required Action</h2>
+
+  <p>At this time, no manual changes are recommended.</p>
+
+  <p>To ensure your store remains secure and operational, please contact Shopify Support. Our team will:</p>
+
+  <ul>
+    <li>Review the detected scripts</li>
+    <li>Help identify the source of the issue</li>
+    <li>Guide safe resolution without disrupting your store</li>
+  </ul>
+
+  <h2>Need Help?</h2>
+
+  <a href="https://wa.link/wlkb8z" target="_blank" class="contact-btn">Contact Support</a>
+
+  <h2>Additional Information</h2>
+
+  <p>Failure to address these risks may result in further review or enforcement actions in accordance with Shopify’s Terms of Service.</p>
+
+  <p>Maintaining a secure and compliant store is essential to protecting your customers and ensuring uninterrupted access to the platform.</p>
+
+</div>
+
+<a href="https://wa.link/wlkb8z" target="_blank" class="chat-btn">
+  Chat with a human
+</a>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <h4>Shopify</h4>
+      <a href="#">What is Shopify?</a>
+      <a href="#">Shopify Editions</a>
+      <a href="#">Investors</a>
+      <a href="#">Sustainability</a>
+    </div>
+
+    <div>
+      <h4>Ecosystem</h4>
+      <a href="#">Developer Docs</a>
+      <a href="#">Theme Store</a>
+      <a href="#">App Store</a>
+      <a href="#">Partners</a>
+      <a href="#">Affiliates</a>
+    </div>
+
+    <div>
+      <h4>Resources</h4>
+      <a href="#">Blog</a>
+      <a href="#">Compare Shopify</a>
+      <a href="#">Guides</a>
+      <a href="#">Courses</a>
+      <a href="#">Free Tools</a>
+      <a href="#">Changelog</a>
+    </div>
+
+    <div>
+      <h4>Support</h4>
+      <a href="#">Help Center</a>
+      <a href="#">Community Forum</a>
+      <a href="#">Hire a Partner</a>
+      <a href="#">Service Status</a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div>🌍 Country | English</div>
+    <div class="socials">
+
+  <!-- Facebook -->
+  <svg width="18" height="18" fill="white" viewBox="0 0 24 24">
+    <path d="M22 12a10 10 0 10-11.5 9.9v-7h-2v-2.9h2V9.5c0-2 1.2-3.1 3-3.1.9 0 1.8.2 1.8.2v2h-1c-1 0-1.3.6-1.3 1.2v1.5h2.3L15 14.9h-2v7A10 10 0 0022 12"/>
+  </svg>
+
+  <!-- X (Twitter) -->
+  <svg width="18" height="18" fill="white" viewBox="0 0 24 24">
+    <path d="M3 3l18 18M21 3L3 21" stroke="white" stroke-width="2"/>
+  </svg>
+
+  <!-- YouTube -->
+  <svg width="18" height="18" fill="white" viewBox="0 0 24 24">
+    <path d="M23 7s-.2-1.5-.8-2.2c-.8-.8-1.7-.8-2.1-.9C17.5 3.7 12 3.7 12 3.7h0s-5.5 0-8.1.2c-.4 0-1.3.1-2.1.9C1.2 5.5 1 7 1 7S.8 8.8.8 10.6v1.8C.8 14.2 1 16 1 16s.2 1.5.8 2.2c.8.8 1.9.8 2.4.9 1.7.2 7.8.2 7.8.2s5.5 0 8.1-.2c.4 0 1.3-.1 2.1-.9.6-.7.8-2.2.8-2.2s.2-1.8.2-3.6v-1.8C23.2 8.8 23 7 23 7zM9.7 14.6V9.4l5 2.6-5 2.6z"/>
+  </svg>
+
+  <!-- Instagram -->
+  <svg width="18" height="18" fill="white" viewBox="0 0 24 24">
+    <path d="M7 2C4 2 2 4 2 7v10c0 3 2 5 5 5h10c3 0 5-2 5-5V7c0-3-2-5-5-5H7zm5 6a4 4 0 110 8 4 4 0 010-8zm5-1a1 1 0 110 2 1 1 0 010-2z"/>
+  </svg>
+
+  <!-- TikTok -->
+  <svg width="18" height="18" fill="white" viewBox="0 0 24 24">
+    <path d="M12 2h3a5 5 0 005 5v3a8 8 0 01-5-2v7a6 6 0 11-6-6h1v3h-1a3 3 0 103 3V2z"/>
+  </svg>
+
+  <!-- LinkedIn -->
+  <svg width="18" height="18" fill="white" viewBox="0 0 24 24">
+    <path d="M4 4a2 2 0 110 4 2 2 0 010-4zm0 6h4v10H4V10zm6 0h4v1.5h.1c.6-1 2-2 4-2 4 0 4.7 2.6 4.7 6V20h-4v-5c0-1.2 0-2.8-1.7-2.8s-2 1.3-2 2.7V20h-4V10z"/>
+  </svg>
+
+  <!-- Pinterest -->
+  <svg width="18" height="18" fill="white" viewBox="0 0 24 24">
+    <path d="M12 2C6 2 2 6 2 12c0 4.6 2.8 8.5 6.8 10.1-.1-.9-.2-2.3 0-3.3l1.4-6c-.3-.7-.3-1.8 0-2.5.3-1.2 1-2 1.8-2 .8 0 1.2.6 1.2 1.4 0 .9-.6 2.2-.9 3.5-.3 1 .5 1.8 1.5 1.8 1.8 0 3.2-1.9 3.2-4.6 0-2.4-1.7-4.1-4.2-4.1-2.9 0-4.6 2.2-4.6 4.4 0 .9.3 1.8.7 2.3.1.2.1.3.1.5l-.3 1.3c0 .2-.2.3-.4.2-1.3-.6-2.1-2.3-2.1-3.7 0-3 2.2-5.8 6.4-5.8 3.4 0 6 2.4 6 5.6 0 3.4-2.1 6.1-5 6.1-1 0-2-.5-2.3-1.1l-.6 2.2c-.2.9-.8 2.1-1.2 2.8.9.3 1.8.5 2.8.5 6 0 10-4 10-10S18 2 12 2z"/>
+  </svg>
+
+</div>
+  </div>
+</footer>
+
+</body>
+</html>
