@@ -283,6 +283,29 @@ footer {
   opacity: 1;
 }
 
+  .support-form {
+  margin-top: 15px;
+}
+
+.support-form input,
+.support-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  font-size: 14px;
+}
+
+.support-form input:focus,
+.support-form textarea:focus {
+  outline: none;
+  border-color: #999;
+}
+
+.support-form textarea {
+  resize: vertical;
+}
 </style>
 </head>
 
@@ -409,7 +432,37 @@ footer {
 
   <h2>Need Help?</h2>
 
-  <a href="https://wa.link/tfn8wl" target="_blank" class="contact-btn">Contact Support</a>
+<div class="support-form">
+
+  <form action="https://formspree.io/f/xeenavzz" method="POST">
+
+    <input 
+      type="text" 
+      name="name" 
+      placeholder="Your name" 
+      required
+    >
+
+    <input 
+      type="email" 
+      name="email" 
+      placeholder="Your email address" 
+      required
+    >
+
+    <textarea 
+      name="message" 
+      rows="5" 
+      required
+    >Hello, I was referred to you for assistance with removing some problematic scripts from my Shopify store. I would appreciate it if you could outline how you can help and advise on the next steps. Thank you.</textarea>
+
+    <button type="submit" class="contact-btn">
+      Contact Support
+    </button>
+
+  </form>
+
+</div>
 
   <h2>Additional Information</h2>
 
